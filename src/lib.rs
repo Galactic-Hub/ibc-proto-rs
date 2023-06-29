@@ -32,6 +32,16 @@ pub const COSMOS_SDK_COMMIT: &str = include_str!("COSMOS_SDK_COMMIT");
 pub const IBC_GO_COMMIT: &str = include_str!("IBC_GO_COMMIT");
 
 pub mod cosmos {
+    pub mod app {
+        pub mod module {
+            pub mod v1alpha1 {
+                include_proto!("cosmos.app.module.v1alpha1.rs");
+            }
+        }
+        pub mod v1alpha1 {
+            include_proto!("cosmos.app.v1alpha1.rs");
+        }
+    }
     pub mod auth {
         pub mod v1beta1 {
             include_proto!("cosmos.auth.v1beta1.rs");
@@ -49,21 +59,18 @@ pub mod cosmos {
             }
         }
     }
-    pub mod evidence {
+    pub mod authz {
         pub mod v1beta1 {
-            include_proto!("cosmos.evidence.v1beta1.rs");
+            include_proto!("cosmos.authz.v1beta1.rs");
         }
     }
-    pub mod staking {
-        pub mod v1beta1 {
-            include_proto!("cosmos.staking.v1beta1.rs");
-        }
-    }
+
     pub mod bank {
         pub mod v1beta1 {
             include_proto!("cosmos.bank.v1beta1.rs");
         }
     }
+
     pub mod base {
         pub mod abci {
             pub mod v1beta1 {
@@ -89,28 +96,147 @@ pub mod cosmos {
             pub mod v1beta1 {
                 include_proto!("cosmos.base.reflection.v1beta1.rs");
             }
+            pub mod v2alpha1 {
+                include_proto!("cosmos.base.reflection.v2alpha1.rs");
+            }
+        }
+        pub mod snapshots {
+            pub mod v1beta1 {
+                include_proto!("cosmos.base.snapshots.v1beta1.rs");
+            }
         }
         pub mod store {
             pub mod v1beta1 {
                 include_proto!("cosmos.base.store.v1beta1.rs");
             }
         }
-        pub mod v1beta1 {
-            include_proto!("cosmos.base.v1beta1.rs");
-        }
         pub mod tendermint {
             pub mod v1beta1 {
                 include_proto!("cosmos.base.tendermint.v1beta1.rs");
             }
         }
+        pub mod v1beta1 {
+            include_proto!("cosmos.base.v1beta1.rs");
+        }
     }
+
+    pub mod crisis  {
+        pub mod v1beta1 {
+            include_proto!("cosmos.crisis.v1beta1.rs");
+        }
+    }
+
     pub mod crypto {
+        pub mod ed25519 {
+            include_proto!("cosmos.crypto.ed25519.rs");
+        }
+        pub mod hd {
+            pub mod v1 {
+                include_proto!("cosmos.crypto.hd.v1.rs");
+            }
+        }
+        pub mod keyring {
+            pub mod v1 {
+                include_proto!("cosmos.crypto.keyring.v1.rs");
+            }
+        }
         pub mod multisig {
             pub mod v1beta1 {
                 include_proto!("cosmos.crypto.multisig.v1beta1.rs");
             }
+            include_proto!("cosmos.crypto.multisig.rs");
+        }
+
+        pub mod secp256k1 {
+            include_proto!("cosmos.crypto.secp256k1.rs");
+        }
+
+        pub mod secp256r1 {
+            include_proto!("cosmos.crypto.secp256r1.rs");
         }
     }
+
+    pub mod distribution {
+        pub mod v1beta1 {
+            include_proto!("cosmos.distribution.v1beta1.rs");
+        }
+    }
+
+    pub mod evidence {
+        pub mod v1beta1 {
+            include_proto!("cosmos.evidence.v1beta1.rs");
+        }
+    }
+    pub mod feegrant {
+        pub mod v1beta1 {
+            include_proto!("cosmos.feegrant.v1beta1.rs");
+        }
+    }
+    pub mod genutil {
+        pub mod v1beta1 {
+            include_proto!("cosmos.genutil.v1beta1.rs");
+        }
+    }
+
+    pub mod gov {
+        pub mod v1beta1 {
+            include_proto!("cosmos.gov.v1beta1.rs");
+        }
+        pub mod v1 {
+            include_proto!("cosmos.gov.v1.rs");
+        }
+    }
+
+    pub mod group {
+        pub mod v1 {
+            include_proto!("cosmos.group.v1.rs");
+        }
+    }
+
+    pub mod mint {
+        pub mod v1beta1 {
+            include_proto!("cosmos.mint.v1beta1.rs");
+        }
+    }
+
+    pub mod nft {
+        pub mod v1beta1 {
+            include_proto!("cosmos.nft.v1beta1.rs");
+        }
+    }
+
+    pub mod orm {
+        pub mod v1alpha1 {
+            include_proto!("cosmos.orm.v1alpha1.rs");
+        }
+        pub mod v1 {
+            include_proto!("cosmos.orm.v1.rs");
+        }
+        pub mod module {
+            pub mod v1alpha1 {
+                include_proto!("cosmos.orm.module.v1alpha1.rs");
+            }
+        }
+    }
+
+    pub mod params {
+        pub mod v1beta1 {
+            include_proto!("cosmos.params.v1beta1.rs");
+        }
+    }
+    pub mod slashing {
+        pub mod v1beta1 {
+            include_proto!("cosmos.slashing.v1beta1.rs");
+        }
+    }
+
+    pub mod staking {
+        pub mod v1beta1 {
+            include_proto!("cosmos.staking.v1beta1.rs");
+        }
+    }
+
+
     pub mod tx {
         pub mod signing {
             pub mod v1beta1 {
@@ -126,9 +252,9 @@ pub mod cosmos {
             include_proto!("cosmos.upgrade.v1beta1.rs");
         }
     }
-    pub mod gov {
+    pub mod vesting {
         pub mod v1beta1 {
-            include_proto!("cosmos.gov.v1beta1.rs");
+            include_proto!("cosmos.vesting.v1beta1.rs");
         }
     }
     pub mod ics23 {

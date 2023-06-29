@@ -961,8 +961,8 @@ pub mod uninterpreted_option {
     /// The name of the uninterpreted option.  Each string represents a segment in
     /// a dot-separated name.  is_extension is true iff a segment represents an
     /// extension (denoted with parentheses in options specs in .proto files).
-    /// E.g.,{ ["foo", false], ["bar.baz", true], ["moo", false] } represents
-    /// "foo.(bar.baz).moo".
+    /// E.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
+    /// "foo.(bar.baz).qux".
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
     pub struct NamePart {
@@ -1087,13 +1087,13 @@ pub mod source_code_info {
         ///    // Comment attached to baz.
         ///    // Another line attached to baz.
         ///
-        ///    // Comment attached to moo.
+        ///    // Comment attached to qux.
         ///    //
-        ///    // Another line attached to moo.
-        ///    optional double moo = 4;
+        ///    // Another line attached to qux.
+        ///    optional double qux = 4;
         ///
         ///    // Detached comment for corge. This is not leading or trailing comments
-        ///    // to moo or corge because there are blank lines separating it from
+        ///    // to qux or corge because there are blank lines separating it from
         ///    // both.
         ///
         ///    // Detached comment for corge paragraph 2.
